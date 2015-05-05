@@ -14,3 +14,8 @@ Arranges letters in a word in alphabetic order.
 Not sure what the point of this script is.
 
 eg: python alphabetic.py abracadabra (Will print : aaaaabbcdrr)
+
+##flasky.py
+
+Sets up basic environment for flask app.
+
