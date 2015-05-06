@@ -13,6 +13,15 @@ for directory in dirs:
 	if not os.path.isdir(directory):
 		os.makedirs(directory)
 
-css_files = glob(*.css)
-js_files = glob(*.js)
-img_files = glob(*.jpg)
+css_files = glob("*.css")
+js_files = glob("*.js")
+img_files = glob("*.jpg")
+
+for i in css_files:
+	os.rename(i, "static\css" + i)
+
+for i in js_files:
+	os.rename(i, "static\js" + i)
+
+for i in img_files:
+	os.rename(i, "static\img" + i)
