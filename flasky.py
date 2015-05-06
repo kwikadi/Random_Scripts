@@ -5,9 +5,14 @@
 #5. If html, scan line by line, and replace sources with {url_for()}
 
 import os
+from glob import glob
 
 dirs = ["templates", "static", "static\css", "static\js", "static\img"]
 
 for directory in dirs:
 	if not os.path.isdir(directory):
 		os.makedirs(directory)
+
+css_files = glob(*.css)
+js_files = glob(*.js)
+img_files = glob(*.jpg)
