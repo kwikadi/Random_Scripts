@@ -1,9 +1,3 @@
-#1. Check if 'Templates' and 'Static' are made or not. If no, create.
-#2. Check inside 'Static' for 'css', 'js' , 'img' folders.
-#3. Scan complete folder.
-#4. If file is css, js, or {img}, put in resp folders
-#5. If html, scan line by line, and replace sources with {url_for()}
-
 import os
 from glob import glob
 
@@ -16,12 +10,21 @@ for directory in dirs:
 css_files = glob("*.css")
 js_files = glob("*.js")
 img_files = glob("*.jpg")
+html_files = glob("*.html")
 
 for i in css_files:
-	os.rename(i, "static\css" + i)
+	os.rename(i, "static\css\\" + i)
 
 for i in js_files:
-	os.rename(i, "static\js" + i)
+	os.rename(i, "static\js\\" + i)
 
 for i in img_files:
-	os.rename(i, "static\img" + i)
+	os.rename(i, "static\img\\" + i)
+
+for i in html_files:
+	with open(i, "w") as f:
+		lines = f.readlines()
+		for line in lines:
+			#if reference to css/js/img found, replace.
+	os.rename(i, "templates\\" + i)
+
